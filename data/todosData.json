@@ -1,0 +1,52 @@
+[
+  {
+    "desc": "Meeting with team",
+    "date": "2022-05-02",
+    "isDone": false
+  },
+  {
+    "desc": "Submit report",
+    "date": "2022-05-03",
+    "isDone": false
+  },
+  {
+    "desc": "Call Mom",
+    "date": "2022-05-04",
+    "isDone": false
+  },
+  {
+    "desc": "Pay Rent",
+    "date": "2022-05-05",
+    "isDone": false
+  },
+  {
+    "desc": "Gym",
+    "date": "2022-05-06",
+    "isDone": false
+  },
+  {
+    "desc": "Dinner with friends",
+    "date": "2022-05-07",
+    "isDone": false
+  },
+  {
+    "desc": "Laundry",
+    "date": "2022-05-08",
+    "isDone": false
+  },
+  {
+    "desc": "Book flight tickets",
+    "date": "2022-05-09",
+    "isDone": false
+  },
+  {
+    "desc": "Car service",
+    "date": "2022-05-10",
+    "isDone": false
+  },
+  {
+    "desc": "Read a book",
+    "date": "2022-05-11",
+    "isDone": false
+  }
+]

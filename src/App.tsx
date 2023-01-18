@@ -3,19 +3,9 @@ import "./App.css";
 import InputField from "./components/InputField";
 import TodosCard from "./components/TodosCard";
 import { Todo } from "../Types";
+import todosData from "../data/todosData.json";
 function App() {
-  const [Todos, setTodos] = useState<Array<Todo>>([
-    {
-      desc: "lorem empson something lorem empson something lorem empson something ",
-      date: new Date().toLocaleDateString("en-US"),
-      isDone: false,
-    },
-    {
-      desc: "lorem empson something lorem empson something lorem empson something ",
-      date: new Date().toLocaleDateString("en-US"),
-      isDone: true,
-    },
-  ]);
+  const [Todos, setTodos] = useState<Array<Todo>>(todosData);
 
   const handleAdd = (description: string) => {
     setTodos([
