@@ -14,17 +14,15 @@ function App() {
   }, []);
 
   const handleAdd = (description: string) => {
-    setTodos([
-      ...Todos,
-      {
-        desc: description,
-        date: new Date().toLocaleDateString("fr-CA"),
-        isDone: false,
-      },
-    ]);
-    console.log(Todos);
+    const newTodo: Todo = {
+      desc: description,
+      date: new Date().toLocaleDateString("fr-CA"),
+      isDone: false,
+    };
+    setTodos((oldTodos) => [...oldTodos, newTodo]); //TODO: fix this
+    console.log(Todos); //! First item is empty for some reason.
 
-    localStorage.setItem("todos", JSON.stringify(Todos));
+    //localStorage.setItem("todos", JSON.stringify(Todos));
   };
   const handleDone = (id: number) => {
     let updatedTodos = [...Todos];
