@@ -37,7 +37,7 @@ function App() {
           <div key={index}>
             <TodosCard desc={todo.desc} isDone={todo.isDone} date={todo.date} />
           </div>
-        ))}
+        )).reverse()}
       </div>
     </div>
   );

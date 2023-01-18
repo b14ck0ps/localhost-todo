@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { Todo } from "../../Types";
 
 export default function InputField({ addTodo }: any) {
   const newTodo = useRef<HTMLInputElement>(null);
