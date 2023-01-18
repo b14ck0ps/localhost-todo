@@ -17,6 +17,11 @@ function App() {
       },
     ]);
   };
+  const handleDone = (id: number) => {
+    let updatedTodos = [...Todos];
+    updatedTodos[id].isDone = true;
+    setTodos(updatedTodos);
+  };
   return (
     <div>
       <div className="flex justify-center mt-10">
@@ -25,7 +30,13 @@ function App() {
       <div className="flex flex-col gap-5 items-center mt-5">
         {Todos.map((todo, index) => (
           <div key={index}>
-            <TodosCard desc={todo.desc} isDone={todo.isDone} date={todo.date} />
+            <TodosCard
+              id={index}
+              desc={todo.desc}
+              isDone={todo.isDone}
+              date={todo.date}
+              handleDone={handleDone}
+            />
           </div>
         )).reverse()}
       </div>
