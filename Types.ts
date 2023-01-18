@@ -1,5 +1,5 @@
 export type Todo = {
-  desc: string | undefined;
+  desc: string;
   isDone: boolean;
   date: string;
 };
