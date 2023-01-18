@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import InputField from "./components/InputField";
 import TodosCard from "./components/TodosCard";
 import { Todo } from "../Types";
-import todosData from "../data/todosData.json";
+
 function App() {
-  const [Todos, setTodos] = useState<Array<Todo>>(todosData);
+  const [Todos, setTodos] = useState<Array<Todo>>([]);
+  useEffect(() => {
+    const localTodos = localStorage.getItem("todos");
+    if (localTodos) {
+      setTodos(JSON.parse(localTodos));
+    }
+  }, []);
 
   const handleAdd = (description: string) => {
     setTodos([
@@ -16,11 +22,15 @@ function App() {
         isDone: false,
       },
     ]);
+    console.log(Todos);
+
+    localStorage.setItem("todos", JSON.stringify(Todos));
   };
   const handleDone = (id: number) => {
     let updatedTodos = [...Todos];
     updatedTodos[id].isDone = !updatedTodos[id].isDone;
     setTodos(updatedTodos);
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
   return (
     <div>
