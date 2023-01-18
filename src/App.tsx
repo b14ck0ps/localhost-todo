@@ -3,6 +3,8 @@ import "./App.css";
 import InputField from "./components/InputField";
 import TodosCard from "./components/TodosCard";
 import { Todo } from "../Types";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   const localTodos = localStorage.getItem("todos");
@@ -35,9 +37,14 @@ function App() {
   };
   return (
     <div>
+      <Header />
+
+      {/* form components  */}
       <div className="flex justify-center mt-10">
         <InputField addTodo={handleAdd} />
       </div>
+
+      {/* Renders TODOS */}
       <div className="flex flex-col gap-5 items-center mt-5">
         {Todos.map((todo, index) => (
           <div key={index}>
@@ -51,6 +58,8 @@ function App() {
           </div>
         )).reverse()}
       </div>
+
+      <Footer />
     </div>
   );
 }
