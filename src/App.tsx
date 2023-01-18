@@ -19,7 +19,7 @@ function App() {
   };
   return (
     <div>
-      <div className="flex justify-center mt-52">
+      <div className="flex justify-center mt-10">
         <InputField addTodo={handleAdd} />
       </div>
       <div className="flex flex-col gap-5 items-center mt-5">
