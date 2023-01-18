@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
+import { Todo } from "../../Types";
 
-export default function InputField() {
+export default function InputField({ addTodo }: any) {
   const newTodo = useRef<HTMLInputElement>(null);
 
   const onAdd = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(newTodo.current?.value);
+    addTodo(newTodo.current?.value);
   };
   return (
     <div>

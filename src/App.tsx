@@ -16,10 +16,21 @@ function App() {
       isDone: true,
     },
   ]);
+
+  const handleAdd = (description: string) => {
+    setTodos([
+      ...Todos,
+      {
+        desc: description,
+        date: new Date().toLocaleDateString("en-us"),
+        isDone: false,
+      },
+    ]);
+  };
   return (
     <div>
       <div className="flex justify-center mt-52">
-        <InputField />
+        <InputField addTodo={handleAdd} />
       </div>
       <div className="flex flex-col gap-5 items-center mt-5">
         {Todos.map((todo, index) => (
