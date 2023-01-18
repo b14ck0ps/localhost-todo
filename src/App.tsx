@@ -12,7 +12,7 @@ function App() {
       ...Todos,
       {
         desc: description,
-        date: new Date().toLocaleDateString("en-us"),
+        date: new Date().toLocaleDateString("fr-CA"),
         isDone: false,
       },
     ]);
