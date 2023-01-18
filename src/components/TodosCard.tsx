@@ -22,7 +22,7 @@ export default function TodosCard({
           onClick={() => handleDone(id)}
           className="border border-black px-2 rounded hover:border-white "
         >
-          Done
+          {isDone ? "Undone" : "Done"}
         </button>
         <p>{date}</p>
       </div>

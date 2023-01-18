@@ -19,7 +19,7 @@ function App() {
   };
   const handleDone = (id: number) => {
     let updatedTodos = [...Todos];
-    updatedTodos[id].isDone = true;
+    updatedTodos[id].isDone = !updatedTodos[id].isDone;
     setTodos(updatedTodos);
   };
   return (
