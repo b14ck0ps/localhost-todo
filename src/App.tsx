@@ -5,13 +5,20 @@ import TodosCard from "./components/TodosCard";
 import { Todo } from "../Types";
 
 function App() {
+  const localTodos = localStorage.getItem("todos");
   const [Todos, setTodos] = useState<Array<Todo>>([]);
+
+  //Render local data for the first time
   useEffect(() => {
-    const localTodos = localStorage.getItem("todos");
     if (localTodos) {
       setTodos(JSON.parse(localTodos));
     }
   }, []);
+
+  //change local date when the state change
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(Todos));
+  }, [Todos]);
 
   const handleAdd = (description: string) => {
     const newTodo: Todo = {
@@ -19,16 +26,12 @@ function App() {
       date: new Date().toLocaleDateString("fr-CA"),
       isDone: false,
     };
-    setTodos((oldTodos) => [...oldTodos, newTodo]); //TODO: fix this
-    console.log(Todos); //! First [] array is empty for some reason.
-
-    //localStorage.setItem("todos", JSON.stringify(Todos));
+    setTodos((oldTodos) => [...oldTodos, newTodo]);
   };
   const handleDone = (id: number) => {
     let updatedTodos = [...Todos];
     updatedTodos[id].isDone = !updatedTodos[id].isDone;
     setTodos(updatedTodos);
-    localStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
   return (
     <div>
