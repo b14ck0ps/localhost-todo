@@ -6,7 +6,9 @@ export default function InputField({ addTodo }: any) {
 
   const onAdd = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    addTodo(newTodo.current?.value);
+    const todo = newTodo.current?.value;
+    addTodo(todo);
+    if (todo) newTodo.current.value = "";
   };
   return (
     <div>
