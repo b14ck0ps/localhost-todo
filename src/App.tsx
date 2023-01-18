@@ -20,7 +20,7 @@ function App() {
       isDone: false,
     };
     setTodos((oldTodos) => [...oldTodos, newTodo]); //TODO: fix this
-    console.log(Todos); //! First item is empty for some reason.
+    console.log(Todos); //! First [] array is empty for some reason.
 
     //localStorage.setItem("todos", JSON.stringify(Todos));
   };

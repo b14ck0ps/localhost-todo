@@ -18,7 +18,10 @@ export default function InputField({ addTodo }: any) {
           type="text"
           placeholder="Add new todo"
         />
-        <button className="border ml-5 px-5 p-2 rounded-md" type="submit">
+        <button
+          className="border ml-5 px-5 p-2 rounded-md hover:cursor-pointer"
+          type="submit"
+        >
           Add
         </button>
       </form>
