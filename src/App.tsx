@@ -10,18 +10,28 @@ import ClearBtn from "./components/ClearBtn";
 function App() {
   const localTodos = localStorage.getItem("todos");
   const [Todos, setTodos] = useState<Array<Todo>>([]);
+  const [showClrBtn, setshowClrBtn] = useState(false);
+
+  const isEmptyStrg = () => {
+    if (typeof localTodos?.length !== "undefined" && localTodos?.length !== 2) {
+      console.log(localTodos?.length);
+      setshowClrBtn(true);
+    }
+  };
 
   //Render local data for the first time
   useEffect(() => {
     if (localTodos) {
       setTodos(JSON.parse(localTodos));
     }
+    isEmptyStrg();
   }, []);
 
   //change local date when the state change
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(Todos));
-  }, [Todos]);
+    isEmptyStrg();
+  }, [Todos, showClrBtn]);
 
   const handleAdd = (description: string) => {
     const newTodo: Todo = {
@@ -50,7 +60,7 @@ function App() {
           <InputField addTodo={handleAdd} />
         </div>
         <div className="fixed sm:left-[10%] md:left-[20%] lg:left-[25%] xl:left-[30%] bottom-96">
-          <ClearBtn />
+          {showClrBtn && <ClearBtn />}
         </div>
       </div>
 
