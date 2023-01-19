@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <>
       <div className="flex justify-center mt-5">
-        <div className="inline-block rounded-md bg-gradient-to-r from-amber-500 via-gray-800 to-blue-500 p-1">
+        <div className="inline-block rounded-md bg-gradient-to-r from-amber-500 via-gray-800 to-blue-500 p-1 w-[500px]">
           <div className=" bg-gray-800 back">
             <h1 className="text-2xl font-black text-white">
               <div className="text-center text-4xl px-5 py-2">
