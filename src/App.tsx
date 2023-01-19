@@ -14,7 +14,6 @@ function App() {
 
   const isEmptyStrg = () => {
     if (typeof localTodos?.length !== "undefined" && localTodos?.length !== 2) {
-      console.log(localTodos?.length);
       setshowClrBtn(true);
     }
   };
@@ -50,6 +49,9 @@ function App() {
     updatedTodos[id].isDone = !updatedTodos[id].isDone;
     setTodos(updatedTodos);
   };
+  const onClearAll = () => {
+    setTodos([]);
+  };
   return (
     <div>
       <Header />
@@ -60,7 +62,7 @@ function App() {
           <InputField addTodo={handleAdd} />
         </div>
         <div className="fixed sm:left-[10%] md:left-[20%] lg:left-[25%] xl:left-[30%] bottom-96">
-          {showClrBtn && <ClearBtn />}
+          {showClrBtn && <ClearBtn onClear={onClearAll} />}
         </div>
       </div>
 
