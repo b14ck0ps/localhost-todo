@@ -23,7 +23,13 @@ export default function TodosCard({
         " bg-amber-400 p-5 w-[290px] rounded shadow-lg [&]:text-gray-800 hover:scale-105 transition-all "
       }
     >
-      <p className={isDone ? "line-through blur-[1px]" : ""}>{desc}</p>
+      <p
+        className={
+          " font-Solitreo text-xl " + (isDone ? "line-through blur-[1px]" : "")
+        }
+      >
+        {desc}
+      </p>
       <div className="flex justify-between mt-2 border-t border-gray-800 pt-2">
         <button
           onClick={() => handleDone(id)}
