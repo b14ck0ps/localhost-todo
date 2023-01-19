@@ -25,7 +25,11 @@ function App() {
   const handleAdd = (description: string) => {
     const newTodo: Todo = {
       desc: description,
-      date: new Date().toLocaleDateString("fr-CA"),
+      date: new Date().toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      }),
       isDone: false,
     };
     setTodos((oldTodos) => [...oldTodos, newTodo]);
