@@ -4,8 +4,8 @@ import { DiGithubAlt } from "react-icons/di";
 
 export default function Footer() {
   return (
-    <div className="text-center mt-5 p-5">
-      <p>A simple TODO App create with React</p>
+    <div className="text-center mt-5 p-5 [&]:text-gray-100">
+      <p>A simple TODO App create with React & TailwindCSS</p>
       Made with <AiFillHeart className="inline text-red-600" /> by{" "}
       <a
         className="text-blue-600 font-semibold group"
