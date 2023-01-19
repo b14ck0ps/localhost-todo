@@ -5,6 +5,7 @@ import TodosCard from "./components/TodosCard";
 import { Todo } from "../Types";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import ClearBtn from "./components/ClearBtn";
 
 function App() {
   const localTodos = localStorage.getItem("todos");
@@ -44,8 +45,13 @@ function App() {
       <Header />
 
       {/* form components  */}
-      <div className="flex justify-center mt-10">
-        <InputField addTodo={handleAdd} />
+      <div className="relative">
+        <div className="flex justify-center mt-10">
+          <InputField addTodo={handleAdd} />
+        </div>
+        <div className="fixed sm:left-[10%] md:left-[20%] lg:left-[25%] xl:left-[30%] bottom-96">
+          <ClearBtn />
+        </div>
       </div>
 
       {/* Renders TODOS */}
